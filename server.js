@@ -16,7 +16,11 @@ const PORT = process.env.PORT || 4009;
 
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ["https://osusu-frontend.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
