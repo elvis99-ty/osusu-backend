@@ -11,27 +11,19 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        lowercase: true, 
+        lowercase: true,
         trim: true
     },
     password: {
         type: String,
         required: true
     },
-    phone: {
+    role: {
         type: String,
-        required: true,
-        trim: true
+        enum: ['user', 'admin'],
+        default: 'user'
     },
-    accountNumber: {
-        type: String,
-        trim: true
-    },
-    bankName: {
-        type: String,
-        trim: true
-    },
-    groups: [{ 
+    groups: [{
         type: Schema.Types.ObjectId,
         ref: 'Group'
     }]

@@ -1,4 +1,3 @@
-// susu-flow-backend/models/payment.schema.js
 const mongoose = require('mongoose');
 
 const PaymentSchema = new mongoose.Schema({
